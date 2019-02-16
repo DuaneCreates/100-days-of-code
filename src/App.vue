@@ -1,18 +1,16 @@
 <template>
   <div id="app">
-    <h1>100 Days of Code</h1>
-    <strong>By Duane Creates</strong>
+    <heading></heading>
   </div>
 </template>
 
 <script>
+import Heading from '@/components/heading.vue';
+
 export default {
   name: 'app',
+  components: {
+    Heading,
+  },
 };
 </script>
-
-<style lang="scss">
-  #app {
-    @apply text-center text-blue-darker mt-10;
-  }
-</style>

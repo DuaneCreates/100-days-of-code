@@ -3,6 +3,9 @@ import '@/assets/css/tailwind.css';
 import Vue from 'vue';
 import Icon from 'vue-awesome/components/Icon.vue';
 import App from './App.vue';
+import 'vue-awesome/icons/brands/codepen';
+import 'vue-awesome/icons/brands/github';
+import 'vue-awesome/icons/brands/instagram';
 
 Vue.component('v-icon', Icon);
 
