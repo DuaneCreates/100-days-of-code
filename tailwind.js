@@ -228,6 +228,18 @@ module.exports = {
       'Courier New',
       'monospace',
     ],
+    'raleway': [
+      'Raleway',
+      'sans-serif',
+    ],
+    'roboto': [
+      'Roboto',
+      'sans-serif',
+    ],
+    'montserrat': [
+      'Montserrat',
+      'sans-serif',
+    ],
   },
 
 

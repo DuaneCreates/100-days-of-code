@@ -8,6 +8,11 @@ Vue.component('v-icon', Icon);
 
 Vue.config.productionTip = false;
 
+// FONTS
+require('typeface-raleway');
+require('typeface-roboto');
+require('typeface-montserrat');
+
 new Vue({
   render: h => h(App),
 }).$mount('#app');
