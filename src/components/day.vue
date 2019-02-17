@@ -3,7 +3,7 @@
     <div class="cover" :class="{'cursor-pointer':!expanded}" @click="expanded=true">
       <div class="day__info">
         <h2 class="day__info__number">Day #{{day}}</h2>
-        <h3 class="day__info__date">{{date}}</h3>
+        <h3 class="day__info__date">{{formattedDate}}</h3>
       </div>
 
       <div v-if="expanded" class="action">
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import moment from 'moment';
 
 export default {
   name: 'day',
@@ -52,6 +53,11 @@ export default {
       expanded: false,
     };
   },
+  computed: {
+    formattedDate() {
+      return moment(this.date).format('dddd Do MMMM YYYY');
+    },
+  },
 };
 </script>
 
@@ -71,11 +77,11 @@ export default {
       @apply flex flex-col justify-between;
 
       &__number {
-        @apply text-2xl font-roboto uppercase;
+        @apply text-3xl font-roboto uppercase;
       }
 
       &__date {
-        @apply text-base font-roboto mt-7;
+        @apply text-sm font-roboto mt-7;
       }
     }
 
