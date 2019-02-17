@@ -1,14 +1,14 @@
 <template>
   <section class="day" :class="{'day--even':day%2===0,'day--odd':day%2===1}">
-    <div class="cover" :class="{'cursor-pointer':!expanded}" @click="expanded=true">
-      <div class="day__info">
+    <div class="cover">
+      <div class="day__info" :class="{'cursor-pointer':!expanded}" @click="expanded=true">
         <h2 class="day__info__number">Day #{{day}}</h2>
         <h3 class="day__info__date">{{formattedDate}}</h3>
       </div>
 
       <div v-if="expanded" class="action">
         <a class="action__close" @click="expanded=false">
-          <v-icon name="times-circle" scale="2"/>
+          <v-icon name="regular/window-close" scale="1.5"/>
         </a>
       </div>
       <div v-else class="action">
@@ -25,7 +25,6 @@
         </div>
       </div>
     </div>
-
   </section>
 </template>
 
@@ -63,7 +62,7 @@ export default {
 
 <style lang="scss" scoped>
   .day {
-    @apply p-5 border-b-2 border-grey-lighter;
+    @apply border-b-2 border-grey-lighter;
 
     &.day--odd {
       @apply bg-white;
@@ -74,7 +73,7 @@ export default {
     }
 
     &__info {
-      @apply flex flex-col justify-between;
+      @apply flex-1 flex flex-col justify-between p-5;
 
       &__number {
         @apply text-3xl font-roboto uppercase;
@@ -89,13 +88,13 @@ export default {
       @apply flex flex-row justify-between items-start;
 
       .action {
-        @apply flex flex-col;
+        @apply flex flex-col p-5;
 
         &__close {
-          @apply cursor-pointer text-blue-darkest;
+          @apply cursor-pointer text-blue-darkest mx-2;
 
           &:hover {
-            @apply text-blue;
+            @apply text-red-dark;
           }
         }
 
@@ -103,7 +102,7 @@ export default {
           @apply flex flex-row justify-end;
 
           &__item {
-            @apply mx-1 text-blue-darkest;
+            @apply mx-2 text-blue-darkest;
 
             &:hover {
               @apply text-blue;
@@ -118,7 +117,7 @@ export default {
             @apply mx-1 no-underline text-sm font-montserrat text-white bg-blue-light px-3 py-2;
 
             &:hover {
-              @apply text-blue-darkest bg-blue-lighter;
+              @apply text-blue-lightest bg-blue-darker;
             }
           }
         }
