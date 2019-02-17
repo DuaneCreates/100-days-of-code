@@ -84,7 +84,7 @@ export default {
 
 <style lang="scss" scoped>
   .day {
-    @apply border-b-2 border-grey-lighter;
+    @apply border-b-2 border-grey-lighter max-w-4xl mx-auto;
 
     &.day--odd {
       @apply bg-white;
