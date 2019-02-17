@@ -1,15 +1,16 @@
 <template>
   <section class="heading">
-    <h1 class="title">100 Days of Code</h1>
+    <h1 class="title">{{info.title}}</h1>
+    <a :href="info.instagram_url" class="subtitle">{{info.name}}</a>
     <img class="avatar" src="https://placeimg.com/150/150/tech"/>
     <div class="external">
-      <a href="#" class="external__item">
+      <a v-if="info.instagram_url" :href="info.instagram_url" class="external__item">
         <v-icon name="brands/instagram" scale="2.5"/>
       </a>
-      <a href="#" class="external__item">
+      <a v-if="info.github_url" :href="info.github_url" class="external__item">
         <v-icon name="brands/github" scale="2.5"/>
       </a>
-      <a href="#" class="external__item">
+      <a v-if="info.codepen_url" :href="info.codepen_url" class="external__item">
         <v-icon name="brands/codepen" scale="2.5"/>
       </a>
     </div>
@@ -19,6 +20,15 @@
 <script>
 export default {
   name: 'heading',
+  data() {
+    return {
+      info: {},
+    };
+  },
+
+  mounted() {
+    this.info = require('@/info.js').default;
+  },
 };
 </script>
 
@@ -30,13 +40,13 @@ export default {
       @apply font-montserrat text-4xl text-blue-darkest;
     }
 
+    .subtitle {
+      @apply mt-2 font-montserrat text-sm text-blue-darkest no-underline;
+    }
+
     .avatar {
       @apply rounded-full w-32 h-32 mx-auto mt-8 border-blue;
       object-fit: cover;
-
-      &:hover {
-        @apply border-4;
-      }
     }
 
     .external {

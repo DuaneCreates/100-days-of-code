@@ -2,6 +2,18 @@
 *Focusing on JavaScript with Vue.js and CSS with Tailwind.css*  
 Please find each day's work in a [separate branch](https://github.com/DuaneCreates/100-days-of-code/branches)
 
+### Identity
+Insert details in *src/info.js* with the format below
+```javascript
+export default {
+  title: '100 Days of Code',
+  name: 'Duane Creates',
+  codepen_url: 'https://codepen.io/duanecreates/',
+  github_url: 'https://github.com/DuaneCreates/100-days-of-code',
+  instagram_url: 'https://www.instagram.com/duanecreates/',
+};
+```
+
 ### Log a day
 Insert day's info file as **day_number.js** in *src/days/info* with this format
 ```javascript
