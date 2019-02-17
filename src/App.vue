@@ -16,11 +16,14 @@ export default {
   },
   data() {
     return {
-      days: [
-        { day: 1, date: '2019-02-17', tags: ['Vue', 'JS', 'Logic'] },
-        { day: 2, date: '2019-02-18', tags: ['UI', 'Adobe XD', 'Layout'] },
-      ],
+      days: [],
     };
+  },
+
+  mounted() {
+    // load each day's info from @/days/info into this.days
+    const files = require.context('./days/info', true, /\.js$/i);
+    this.days = files.keys().map(key => require(`@/days/info/${key.split('/').pop().split('.')[0]}.js`).default);
   },
 };
 </script>
