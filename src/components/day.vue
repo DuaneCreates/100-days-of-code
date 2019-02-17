@@ -76,7 +76,7 @@ export default {
   },
   computed: {
     formattedDate() {
-      return moment(this.date).format('dddd Do MMMM YYYY');
+      return moment(this.date).format('dddd, Do MMMM YYYY');
     },
   },
 };
@@ -98,11 +98,11 @@ export default {
       @apply flex-1 flex flex-col justify-between p-5;
 
       &__number {
-        @apply text-3xl font-roboto uppercase;
+        @apply text-3xl font-montserrat uppercase text-blue-darkest;
       }
 
       &__date {
-        @apply text-sm font-roboto mt-7;
+        @apply text-xs font-normal font-montserrat mt-1 text-blue-darkest;
       }
     }
 
@@ -141,7 +141,7 @@ export default {
         }
 
         .tags {
-          @apply flex flex-row mx-auto mt-5;
+          @apply flex flex-row mx-auto mt-6;
 
           &__item {
             @apply mx-1 no-underline text-sm font-montserrat text-white bg-blue-light px-3 py-2;
@@ -162,7 +162,7 @@ export default {
       }
 
       &__post {
-        @apply mt-6 text-center font-montserrat;
+        @apply mt-6 font-montserrat max-w-lg mx-auto;
       }
 
       &__result {
