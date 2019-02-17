@@ -100,7 +100,7 @@ export default {
       @apply max-w-4xl mx-auto;
 
       &__info {
-        @apply flex-1 flex flex-col justify-between p-5;
+        @apply w-64 flex flex-col justify-between p-5;
 
         &__number {
           @apply text-3xl font-montserrat uppercase text-blue-darkest;
@@ -146,10 +146,10 @@ export default {
           }
 
           .tags {
-            @apply flex flex-row mx-auto mt-6;
+            @apply flex flex-row flex-wrap justify-end mx-auto mt-6;
 
             &__item {
-              @apply mx-1 no-underline text-sm font-montserrat text-white bg-blue-light px-3 py-2;
+              @apply mx-1 mb-2 no-underline text-sm font-montserrat text-white bg-blue-light p-2;
 
               &:hover {
                 @apply text-blue-lightest bg-blue-darker;
