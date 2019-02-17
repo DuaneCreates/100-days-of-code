@@ -6,6 +6,7 @@ import App from './App.vue';
 import 'vue-awesome/icons/brands/codepen';
 import 'vue-awesome/icons/brands/github';
 import 'vue-awesome/icons/brands/instagram';
+import 'vue-awesome/icons/times-circle';
 
 Vue.component('v-icon', Icon);
 

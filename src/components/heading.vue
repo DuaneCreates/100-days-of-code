@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss" scoped>
   .heading {
-    @apply pt-10 pb-6 text-center flex flex-col bg-blue-lightest;
+    @apply pt-10 pb-7 text-center flex flex-col bg-grey-lightest shadow mb-2;
 
     .title {
       @apply font-montserrat text-4xl text-blue-darkest;
