@@ -7,7 +7,8 @@ import App from './App.vue';
 import 'vue-awesome/icons/brands/codepen';
 import 'vue-awesome/icons/brands/github';
 import 'vue-awesome/icons/brands/instagram';
-import 'vue-awesome/icons/regular/window-close';
+import 'vue-awesome/icons/regular/plus-square';
+import 'vue-awesome/icons/regular/minus-square';
 
 Vue.component('vue-markdown', VueMarkdown);
 

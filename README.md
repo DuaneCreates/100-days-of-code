@@ -33,7 +33,7 @@ Insert day's result file as **day_number.vue** in *src/days/results* as a normal
 ```vue
 // example for day 1
 <template>
-  <h1>Day 1 hhehehe</h1>
+  <h1>Day 1</h1>
 </template>
 
 <script>

@@ -6,18 +6,19 @@
         <h3 class="day__info__date">{{formattedDate}}</h3>
       </div>
 
-      <div v-if="expanded" class="action">
-        <a class="action__close" @click="expanded=false">
-          <v-icon name="regular/window-close" scale="1.5"/>
-        </a>
-      </div>
-      <div v-else class="action">
+      <div class="action">
         <div class="external">
           <a href="#" class="external__item">
             <v-icon name="brands/github" scale="1.5"/>
           </a>
           <a href="#" class="external__item">
             <v-icon name="brands/codepen" scale="1.5"/>
+          </a>
+          <a v-if="expanded" class="external__item external__item--close" @click="expanded=false">
+            <v-icon name="regular/minus-square" scale="1.5"/>
+          </a>
+          <a v-else class="external__item external__item--expand" @click="expanded=true">
+            <v-icon name="regular/plus-square" scale="1.5"/>
           </a>
         </div>
         <div class="tags">
@@ -101,24 +102,32 @@ export default {
       @apply flex flex-row justify-between items-start;
 
       .action {
-        @apply flex flex-col p-5;
-
-        &__close {
-          @apply cursor-pointer text-blue-darkest mx-2;
-
-          &:hover {
-            @apply text-red-dark;
-          }
-        }
+        @apply flex flex-col p-5 pl-0;
 
         .external {
           @apply flex flex-row justify-end;
 
           &__item {
-            @apply mx-2 text-blue-darkest;
+            @apply mx-2 text-blue-darkest cursor-pointer;
 
             &:hover {
               @apply text-blue;
+            }
+
+            &--expand {
+              @apply text-green;
+
+              &:hover {
+                @apply text-green-darker;
+              }
+            }
+
+            &--close {
+              @apply text-red;
+
+              &:hover {
+                @apply text-red-darker;
+              }
             }
           }
         }
