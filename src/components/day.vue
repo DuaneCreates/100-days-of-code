@@ -8,10 +8,10 @@
 
       <div class="action">
         <div class="external">
-          <a href="#" class="external__item">
+          <a v-if="github_url" :href="github_url" class="external__item">
             <v-icon name="brands/github" scale="1.5"/>
           </a>
-          <a href="#" class="external__item">
+          <a v-if="codepen_url" :href="codepen_url" class="external__item">
             <v-icon name="brands/codepen" scale="1.5"/>
           </a>
           <a v-if="expanded" class="external__item external__item--close" @click="expanded=false">
@@ -59,6 +59,14 @@ export default {
     tags: {
       type: Array,
       default: () => [],
+    },
+    codepen_url: {
+      type: String,
+      required: false,
+    },
+    github_url: {
+      type: String,
+      required: false,
     },
   },
   data() {

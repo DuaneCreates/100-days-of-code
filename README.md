@@ -26,6 +26,8 @@ export default {
   put some **markdown** up in here  
   `,
   tags: ['JS', 'Duane', 'Creates'],
+  github_url: 'link to commit or branch',
+  codepen_url: 'link to a pen on codepen',
 };
 ```
 
