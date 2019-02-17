@@ -25,6 +25,11 @@
         </div>
       </div>
     </div>
+    <div v-if="expanded" class="body">
+      <h1 class="body__title">{{title}}</h1>
+      <vue-markdown class="body__post" :source="post"></vue-markdown>
+      <component class="body__result" :is="`result-${day}`"/>
+    </div>
   </section>
 </template>
 
@@ -41,6 +46,14 @@ export default {
     date: {
       type: String,
       required: true,
+    },
+    title: {
+      type: String,
+      required: false,
+    },
+    post: {
+      type: String,
+      required: false,
     },
     tags: {
       type: Array,
@@ -122,7 +135,22 @@ export default {
           }
         }
       }
+    }
 
+    .body {
+      @apply p-5 py-3;
+
+      &__title {
+        @apply text-3xl font-raleway text-center;
+      }
+
+      &__post {
+        @apply mt-6 text-center font-montserrat;
+      }
+
+      &__result {
+        @apply w-full mt-8 mb-3;
+      }
     }
   }
 </style>

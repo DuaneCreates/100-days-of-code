@@ -11,7 +11,7 @@ export default {
   date: '2019-02-17',
   title: 'Something',
   post: `
-    put some **markdown** up in here  
+  put some **markdown** up in here  
   `,
   tags: ['JS', 'Duane', 'Creates'],
 };

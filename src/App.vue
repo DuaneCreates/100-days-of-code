@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <heading></heading>
-    <day v-for="day in days" :key="day.day" :day="day.day" :date="day.date" :tags="day.tags"></day>
+    <day v-for="day in days" :key="day.day" :day="day.day" :date="day.date" :title="day.title"
+         :post="day.post" :tags="day.tags"></day>
   </div>
 </template>
 
