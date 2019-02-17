@@ -1,7 +1,7 @@
 <template>
   <section class="heading">
     <h1 class="title">{{info.title}}</h1>
-    <a :href="info.instagram_url" class="subtitle">{{info.name}}</a>
+    <p class="subtitle"><a :href="info.instagram_url">{{info.name}}</a></p>
     <img class="avatar" src="https://placeimg.com/150/150/tech"/>
     <div class="external">
       <a v-if="info.instagram_url" :href="info.instagram_url" class="external__item">
@@ -41,7 +41,11 @@ export default {
     }
 
     .subtitle {
-      @apply mt-2 font-montserrat text-sm text-blue-darkest no-underline;
+      @apply mt-2 font-montserrat text-sm;
+
+      a {
+        @apply no-underline text-blue-darkest;
+      }
     }
 
     .avatar {
