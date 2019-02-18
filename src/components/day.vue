@@ -1,5 +1,6 @@
 <template>
-  <div class="day-wrapper" :class="{'day--even':day%2===0,'day--odd':day%2===1}">
+  <div class="day-wrapper"
+       :class="{'day--even':day%2===0,'day--odd':day%2===1,'day--no-result':!hasResult}">
     <section class="day">
       <div class="cover">
         <div class="day__info" :class="{'cursor-pointer':!expanded}" @click="expanded=true">
@@ -30,7 +31,13 @@
       <div v-if="expanded" class="body">
         <h1 class="body__title">{{title}}</h1>
         <vue-markdown class="body__post" :source="post"></vue-markdown>
-        <component class="body__result" :is="`result-${day}`"/>
+        <div v-if="!hasResult" class="text-center mt-6">
+        <span class="text-lg text-red">
+          There's no result component for this day
+        </span>
+        </div>
+        <component v-if="hasResult" class="body__result"
+                   :is="`result-${day}`"/>
       </div>
     </section>
   </div>
@@ -80,6 +87,9 @@ export default {
     formattedDate() {
       return moment(this.date).format('dddd, Do MMMM YYYY');
     },
+    hasResult() {
+      return this.$options.components[`result-${this.day}`];
+    },
   },
 };
 </script>
@@ -90,10 +100,18 @@ export default {
 
     &.day--odd {
       @apply bg-white;
+
+      &.day--no-result {
+        @apply bg-red-lightest;
+      }
     }
 
     &.day--even {
       @apply bg-grey-lightest;
+
+      &.day--no-result {
+        @apply bg-orange-lightest;
+      }
     }
 
     .day {
