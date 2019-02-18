@@ -39,7 +39,7 @@ export default {
     @apply bg-grey-lightest shadow;
 
     .heading {
-      @apply pt-10 text-center flex flex-col mb-2 max-w-4xl mx-auto;
+      @apply pt-10 text-center flex flex-col mb-2 max-w-3xl mx-auto;
 
       .title {
         @apply font-montserrat text-3xl text-blue-darkest z-10 px-2;

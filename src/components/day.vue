@@ -121,7 +121,7 @@ export default {
     }
 
     .day {
-      @apply max-w-4xl mx-auto;
+      @apply max-w-3xl mx-auto;
 
       &__info {
         @apply w-64 flex flex-col justify-between p-5;
