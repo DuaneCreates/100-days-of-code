@@ -5,7 +5,10 @@
       <div class="cover">
         <div class="day__info" :class="{'cursor-pointer':!expanded}" @click="expanded=true">
           <h2 class="day__info__number">Day #{{day}}</h2>
-          <h3 class="day__info__date">{{formattedDate}}</h3>
+          <h3 class="day__info__date">
+            <span class="day">{{formattedDay+', '}}</span>
+            <span class="date">{{formattedDate}}</span>
+          </h3>
         </div>
 
         <div class="action">
@@ -85,7 +88,10 @@ export default {
   },
   computed: {
     formattedDate() {
-      return moment(this.date).format('dddd, Do MMMM YYYY');
+      return moment(this.date).format('Do MMMM YYYY');
+    },
+    formattedDay() {
+      return moment(this.date).format('dddd');
     },
     hasResult() {
       return this.$options.components[`result-${this.day}`];
@@ -121,11 +127,23 @@ export default {
         @apply w-64 flex flex-col justify-between p-5;
 
         &__number {
-          @apply text-3xl font-montserrat uppercase text-blue-darkest;
+          @apply text-2xl font-montserrat uppercase text-blue-darkest;
+
+          @screen sm {
+            @apply text-3xl;
+          }
         }
 
         &__date {
           @apply text-xs font-normal font-montserrat mt-1 text-blue-darkest;
+
+          .day {
+            @apply hidden;
+
+            @screen sm {
+              @apply inline;
+            }
+          }
         }
       }
 

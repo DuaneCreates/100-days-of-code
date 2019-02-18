@@ -42,11 +42,15 @@ export default {
       @apply pt-10 text-center flex flex-col mb-2 max-w-4xl mx-auto;
 
       .title {
-        @apply font-montserrat text-4xl text-blue-darkest;
+        @apply font-montserrat text-3xl text-blue-darkest z-10 px-2;
+
+        @screen sm {
+          @apply text-4xl;
+        }
       }
 
       .subtitle {
-        @apply mt-2 font-montserrat text-sm;
+        @apply mt-2 font-montserrat text-sm z-10;
 
         a {
           @apply no-underline text-blue-darkest;
@@ -54,18 +58,28 @@ export default {
       }
 
       .avatar {
-        @apply rounded-full w-32 h-32 mx-auto mt-7 border-grey-lightest shadow-md border-4 -mb-12;
+        @apply w-full h-32 -mt-20 z-0;
         object-fit: cover;
+        filter: brightness(30%);
+
+        @screen xs {
+          @apply rounded-full w-32 h-32 mx-auto mt-7 border-grey-lightest shadow-md border-4 -mb-12;
+          filter: brightness(100%);
+        }
       }
 
       .external {
-        @apply flex flex-row mx-auto mt-10;
+        @apply flex flex-row mx-auto mt-10 z-10;
 
         &__item {
-          @apply mx-5 no-underline text-blue-darkest;
+          @apply mx-5 mt-4 no-underline text-white;
 
           &:hover {
             @apply text-blue;
+          }
+
+          @screen xs {
+            @apply text-blue-darkest mt-0;
           }
         }
       }
