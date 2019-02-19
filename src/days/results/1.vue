@@ -1,50 +1,55 @@
 <template>
   <section>
-    <audio v-for="a in audio" :key="a.key" :ref="a.key"
+    <div class="w-full">
+
+    </div>
+    <audio v-for="a in audio" :key="a.file" :ref="a.file"
            :src="require(`../../assets/days/1/${a.file}.wav`)"></audio>
   </section>
 </template>
 
 <script>
+import _ from 'lodash';
+
 export default {
   name: 'result-1',
   data() {
     return {
       audio: [
         {
-          key: 'a',
+          keys: ['a', '1'],
           file: 'clap',
         },
         {
-          key: 's',
+          keys: ['s', '2'],
           file: 'hihat',
         },
         {
-          key: 'd',
+          keys: ['d', '3'],
           file: 'kick',
         },
         {
-          key: 'f',
+          keys: ['f', '4'],
           file: 'openhat',
         },
         {
-          key: 'g',
+          keys: ['g', '5'],
           file: 'boom',
         },
         {
-          key: 'h',
+          keys: ['h', '6'],
           file: 'ride',
         },
         {
-          key: 'j',
+          keys: ['j', '7'],
           file: 'snare',
         },
         {
-          key: 'k',
+          keys: ['k', '8'],
           file: 'tom',
         },
         {
-          key: 'l',
+          keys: ['l', '9'],
           file: 'tink',
         },
       ],
@@ -52,10 +57,13 @@ export default {
   },
   methods: {
     hit(e) {
-      if (!this.$refs[e.key]) return;
+      const a = _.find(this.audio, aud => aud.keys.includes(e.key));
 
-      const audio = this.$refs[e.key][0];
+      if (!a || !this.$refs[a.file]) return;
+
+      const audio = this.$refs[a.file][0];
       if (!audio) return;
+
       audio.currentTime = 0;
       audio.play();
     },
