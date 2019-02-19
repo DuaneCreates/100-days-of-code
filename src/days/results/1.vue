@@ -1,7 +1,9 @@
 <template>
   <section>
-    <div class="w-full">
-
+    <div class="pad">
+      <button v-for="a in audio" :key="a.file" @click="play(a.file)" class="pad__button">
+        <h1>{{a.keys[0].toUpperCase()}}</h1>
+      </button>
     </div>
     <audio v-for="a in audio" :key="a.file" :ref="a.file"
            :src="require(`../../assets/days/1/${a.file}.wav`)"></audio>
@@ -56,16 +58,19 @@ export default {
     };
   },
   methods: {
+    play(file) {
+      const audio = this.$refs[file][0];
+      if (!audio) return;
+
+      audio.currentTime = 0;
+      audio.play();
+    },
     hit(e) {
       const a = _.find(this.audio, aud => aud.keys.includes(e.key));
 
       if (!a || !this.$refs[a.file]) return;
 
-      const audio = this.$refs[a.file][0];
-      if (!audio) return;
-
-      audio.currentTime = 0;
-      audio.play();
+      this.play(a.file);
     },
   },
 
@@ -77,3 +82,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  .pad {
+    @apply w-full flex flex-row flex-wrap;
+  }
+</style>
