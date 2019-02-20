@@ -19,15 +19,15 @@ export default {
     return {
       audio: [
         {
-          keys: ['a', '1'],
+          keys: ['a', '7'],
           file: 'clap',
         },
         {
-          keys: ['s', '2'],
+          keys: ['s', '8'],
           file: 'hihat',
         },
         {
-          keys: ['d', '3'],
+          keys: ['d', '9'],
           file: 'kick',
         },
         {
@@ -43,15 +43,15 @@ export default {
           file: 'ride',
         },
         {
-          keys: ['j', '7'],
+          keys: ['j', '1'],
           file: 'snare',
         },
         {
-          keys: ['k', '8'],
+          keys: ['k', '2'],
           file: 'tom',
         },
         {
-          keys: ['l', '9'],
+          keys: ['l', '3'],
           file: 'tink',
         },
       ],
