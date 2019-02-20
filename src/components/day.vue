@@ -196,14 +196,14 @@ export default {
       }
 
       .body {
-        @apply p-5 py-3;
+        @apply py-3;
 
         &__title {
-          @apply text-3xl font-raleway text-center;
+          @apply px-5 text-3xl font-raleway text-center;
         }
 
         &__post {
-          @apply mt-6 font-montserrat max-w-lg mx-auto;
+          @apply px-5 mt-6 font-montserrat max-w-lg mx-auto;
         }
 
         &__result {
