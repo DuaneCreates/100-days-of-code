@@ -9,6 +9,8 @@ import 'vue-awesome/icons/brands/github';
 import 'vue-awesome/icons/brands/instagram';
 import 'vue-awesome/icons/regular/plus-square';
 import 'vue-awesome/icons/regular/minus-square';
+import 'vue-awesome/icons/check';
+import 'vue-awesome/icons/times';
 
 Vue.component('vue-markdown', VueMarkdown);
 
