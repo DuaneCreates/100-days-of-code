@@ -1,20 +1,20 @@
 <template>
   <section>
     <div class="pad">
-      <button v-for="a in audio" :key="a.file" class="pad__button">
-        <div v-if="a.keys.length > 0">
-          <div class="flex flex-row justify-center mt-2">
-            <div class="key" v-for="key in a.keys" :key="key" @click="play(a.file)">
-              <span>
-                {{key.toUpperCase()}}
-              </span>
-            </div>
+      <button v-for="a in audio" :key="a.file" class="pad__button"
+              :class="{'active':a.keys.includes(keyed)}">
+        <div class="flex flex-row justify-center mt-2">
+          <div class="key" v-for="key in a.keys" :key="key" @click="play(a.file)"
+               :class="{'keyed':keyed===key}">
+    <span>
+    {{key.toUpperCase()}}
+    </span>
           </div>
         </div>
       </button>
     </div>
     <audio v-for="a in audio" :key="a.file" :ref="a.file"
-           :src="require(`../../assets/days/1/${a.file}.wav`)"></audio>
+           :src="require(`../../assets/days/2/${a.file}.wav`)"></audio>
   </section>
 </template>
 
@@ -22,9 +22,10 @@
 import _ from 'lodash';
 
 export default {
-  name: 'result-1',
+  name: 'result-2',
   data() {
     return {
+      keyed: null,
       audio: [
         {
           keys: ['a', '7'],
@@ -74,6 +75,7 @@ export default {
       audio.play();
     },
     hit(e) {
+      this.keyed = e.key;
       const a = _.find(this.audio, aud => aud.keys.includes(e.key));
 
       if (!a || !this.$refs[a.file]) return;
@@ -94,17 +96,102 @@ export default {
 <style lang="scss" scoped>
   .pad {
     @apply w-full flex flex-row flex-wrap;
+
+    .pad__button {
+      @apply w-1/3 py-16 px-4 z-0;
+      transition: all .15s;
+
+      &.active {
+        transform: scale(1.2);
+      }
+    }
+
+    .pad__button:nth-child(1) {
+      @apply bg-blue-lightest;
+
+      &.active {
+        @apply bg-blue-light z-10;
+      }
+    }
+
+    .pad__button:nth-child(2) {
+      @apply bg-red-lightest;
+
+      &.active {
+        @apply bg-red-light z-10;
+      }
+    }
+
+    .pad__button:nth-child(3) {
+      @apply bg-green-lightest;
+
+      &.active {
+        @apply bg-green-light z-10;
+      }
+    }
+
+    .pad__button:nth-child(4) {
+      @apply bg-teal-lightest;
+
+      &.active {
+        @apply bg-teal-light z-10;
+      }
+    }
+
+    .pad__button:nth-child(5) {
+      @apply bg-orange-lightest;
+
+      &.active {
+        @apply bg-orange-light z-10;
+      }
+    }
+
+    .pad__button:nth-child(6) {
+      @apply bg-yellow-lightest;
+
+      &.active {
+        @apply bg-yellow-light z-10;
+      }
+    }
+
+    .pad__button:nth-child(7) {
+      @apply bg-pink-lightest;
+
+      &.active {
+        @apply bg-pink-light z-10;
+      }
+    }
+
+    .pad__button:nth-child(8) {
+      @apply bg-grey-lightest;
+
+      &.active {
+        @apply bg-grey-light z-10;
+      }
+    }
+
+    .pad__button:nth-child(9) {
+      @apply bg-purple-lightest;
+
+      &.active {
+        @apply bg-purple-light z-10;
+      }
+    }
+  }
+
   // KEYBOARD KEYS FROM https://codepen.io/rizkykurniawanritonga/pen/wospJ
 
   div.key {
-    width:35px;
-    height: 37px;
-    padding: 1px;
-    margin: 10px;
+    @apply m-3 h-8 w-8;
+    transition: all .15s;
+
+    &.keyed {
+      transform: scale(1.5);
+    }
   }
 
   div.key > span {
-
+    @apply bg-white;
     display: block;
     width: 35px;
     height: 35px;
