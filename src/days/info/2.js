@@ -1,5 +1,6 @@
 export default {
   day: 2,
+  type: 'result',
   date: '2019-02-22',
   title: 'Drum Kit',
   post: `

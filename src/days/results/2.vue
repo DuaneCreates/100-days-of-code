@@ -2,9 +2,9 @@
   <section>
     <div class="pad">
       <button v-for="a in audio" :key="a.file" class="pad__button"
-              :class="{'active':a.keys.includes(keyed)}">
+              :class="{'active':a.keys.includes(keyed)}" @click="hit({key:a.keys[0]})">
         <div class="flex flex-row justify-center mt-2">
-          <div class="key" v-for="key in a.keys" :key="key" @click="play(a.file)"
+          <div class="key" v-for="key in a.keys" :key="key" @click="hit({key})"
                :class="{'keyed':keyed===key}">
     <span>
     {{key.toUpperCase()}}
@@ -98,7 +98,7 @@ export default {
     @apply w-full flex flex-row flex-wrap;
 
     .pad__button {
-      @apply w-1/3 py-16 px-4 z-0;
+      @apply w-1/3 py-16 px-4 z-0 outline-none;
       transition: all .15s;
 
       &.active {
