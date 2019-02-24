@@ -15,8 +15,10 @@
       <form class="flex-1 bg-1-light-3 p-4" :class="{'valid': all_good}">
         <div class="field">
           <div class="label-wrapper">
-            <v-icon v-if="dirty_name && valid_name" class="validation text-1-green" name="check" scale="1.3"/>
-            <v-icon v-if="dirty_name && !valid_name" class="validation text-red-lighter" name="times" scale="1.3"/>
+            <v-icon v-if="dirty_name && valid_name" class="validation text-1-green" name="check"
+                    scale="1.3"/>
+            <v-icon v-if="dirty_name && !valid_name" class="validation text-red-lighter"
+                    name="times" scale="1.3"/>
             <label for="name">Name</label>
           </div>
           <input v-model.trim="name" id="name" placeholder="Name" type="text"/>
@@ -24,8 +26,10 @@
 
         <div class="field">
           <div class="label-wrapper">
-            <v-icon v-if="dirty_phone && valid_phone" class="validation text-1-green" name="check" scale="1.3"/>
-            <v-icon v-if="dirty_phone && !valid_phone" class="validation text-red-lighter" name="times" scale="1.3"/>
+            <v-icon v-if="dirty_phone && valid_phone" class="validation text-1-green" name="check"
+                    scale="1.3"/>
+            <v-icon v-if="dirty_phone && !valid_phone" class="validation text-red-lighter"
+                    name="times" scale="1.3"/>
             <label for="phone">Phone</label>
           </div>
           <input v-model.trim="phone" id="phone" placeholder="Phone" type="text"/>
@@ -33,8 +37,10 @@
 
         <div class="field">
           <div class="label-wrapper">
-            <v-icon v-if="dirty_email && valid_email" class="validation text-1-green" name="check" scale="1.3"/>
-            <v-icon v-if="dirty_email && !valid_email" class="validation text-red-lighter" name="times" scale="1.3"/>
+            <v-icon v-if="dirty_email && valid_email" class="validation text-1-green" name="check"
+                    scale="1.3"/>
+            <v-icon v-if="dirty_email && !valid_email" class="validation text-red-lighter"
+                    name="times" scale="1.3"/>
             <label for="email">Email</label>
           </div>
           <input v-model.trim="email" id="email" placeholder="Email" type="email"/>
@@ -78,7 +84,7 @@ export default {
       return this.email && this.email.length > 4;
     },
     all_good() {
-      return this.name && this.phone && this.email;
+      return this.valid_name && this.valid_phone && this.valid_email;
     },
   },
 };
@@ -96,7 +102,7 @@ export default {
           @apply flex-1 ml-4 p-2 text-1-light-3 text-xl -mb-3 z-10 bg-1-light-1 rounded-bl-lg font-montserrat;
         }
 
-        .validation{
+        .validation {
           @apply ml-4;
         }
       }
