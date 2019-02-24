@@ -1,9 +1,10 @@
 export default {
   day: 2,
+  type: 'result',
   date: '2019-02-22',
   title: 'Drum Kit',
   post: `
-  > “Wes can hum, Wes can drum, All this drumming, my thumb is numb”  
+  > ♪ Wes can hum, Wes can drum, All this drumming, my thumb is numb ♫  
 
   ### Topics touched:
   - Vue Lifecycle

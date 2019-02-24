@@ -2,7 +2,7 @@
   <div id="app">
     <heading></heading>
     <day v-for="day in days" :key="day.day" :day="day.day" :date="day.date" :title="day.title"
-         :post="day.post" :tags="day.tags" :github_url="day.github_url"
+         :post="day.post" :tags="day.tags" :github_url="day.github_url" :type="day.type"
          :codepen_url="day.codepen_url"></day>
   </div>
 </template>

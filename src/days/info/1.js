@@ -1,5 +1,6 @@
 export default {
   day: 1,
+  type: 'result',
   date: '2019-02-20',
   title: 'Sign-up Page',
   post: `

@@ -1,6 +1,6 @@
 <template>
   <div class="day-wrapper"
-       :class="{'day--even':day%2===0,'day--odd':day%2===1,'day--no-result':!hasResult}">
+       :class="{'day--even':day%2===0,'day--odd':day%2===1,'day--no-result':!hasResult && type !== 'log'}">
     <section class="day">
       <div class="cover">
         <div class="day__info" :class="{'cursor-pointer':!expanded}" @click="expanded=true">
@@ -34,9 +34,14 @@
       <div v-if="expanded" class="body">
         <h1 class="body__title">{{title}}</h1>
         <vue-markdown class="body__post" :source="post"></vue-markdown>
-        <div v-if="!hasResult" class="text-center mt-6">
+        <div v-if="!hasResult && type !== 'log'" class="text-center mt-6">
         <span class="text-lg text-red">
           There's no result component for this day
+        </span>
+        </div>
+        <div v-if="type === 'log'" class="text-center mt-6">
+        <span class="text-lg text-grey">
+          This day has no preview, just a log
         </span>
         </div>
         <component v-if="hasResult" class="body__result"
@@ -55,6 +60,10 @@ export default {
     day: {
       type: Number,
       required: true,
+    },
+    type: {
+      type: String,
+      default: 'result',
     },
     date: {
       type: String,
