@@ -29,39 +29,39 @@ export default {
       audio: [
         {
           keys: ['a', '7'],
-          file: 'clap',
+          file: 'hat_closed',
         },
         {
           keys: ['s', '8'],
-          file: 'hihat',
+          file: 'hat_open',
         },
         {
           keys: ['d', '9'],
-          file: 'kick',
+          file: 'crash',
         },
         {
           keys: ['f', '4'],
-          file: 'openhat',
-        },
-        {
-          keys: ['g', '5'],
-          file: 'boom',
-        },
-        {
-          keys: ['h', '6'],
-          file: 'ride',
-        },
-        {
-          keys: ['j', '1'],
           file: 'snare',
         },
         {
+          keys: ['g', '5'],
+          file: 'kick',
+        },
+        {
+          keys: ['h', '6'],
+          file: 'clap',
+        },
+        {
+          keys: ['j', '1'],
+          file: 'tom_low',
+        },
+        {
           keys: ['k', '2'],
-          file: 'tom',
+          file: 'tom_mid',
         },
         {
           keys: ['l', '3'],
-          file: 'tink',
+          file: 'tom_high',
         },
       ],
     };
@@ -206,9 +206,12 @@ export default {
     padding-top: 15px;
     font-size: 11px;
     color: #7c7c7c;
-    -webkit-box-shadow: 0px 3px 0px -2px rgba(255, 255, 255, 1), 0px 2px 0px 0px rgba(169, 169, 169, 1);
-    -moz-box-shadow: 0px 3px 0px -2px rgba(255, 255, 255, 1), 0px 2px 0px 0px rgba(169, 169, 169, 1);
-    box-shadow: 0px 3px 0px -2px rgba(255, 255, 255, 1), 0px 2px 0px 0px rgba(169, 169, 169, 1);
+    -webkit-box-shadow: 0px 3px 0px -2px rgba(255, 255, 255, 1),
+    0px 2px 0px 0px rgba(169, 169, 169, 1);
+    -moz-box-shadow: 0px 3px 0px -2px rgba(255, 255, 255, 1),
+    0px 2px 0px 0px rgba(169, 169, 169, 1);
+    box-shadow: 0px 3px 0px -2px rgba(255, 255, 255, 1),
+    0px 2px 0px 0px rgba(169, 169, 169, 1);
     cursor: pointer;
   }
 
@@ -217,9 +220,12 @@ export default {
     border: 1px solid #5a88c5;
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0px 3px 0px -2px rgba(117, 180, 251, 1), 0px 2px 0px 0px rgba(90, 136, 197, 1);
-    -moz-box-shadow: 0px 3px 0px -2px rgba(117, 180, 251, 1), 0px 2px 0px 0px rgba(90, 136, 197, 1);
-    box-shadow: 0px 3px 0px -2px rgba(117, 180, 251, 1), 0px 2px 0px 0px rgba(90, 136, 197, 1);
+    -webkit-box-shadow: 0px 3px 0px -2px rgba(117, 180, 251, 1),
+    0px 2px 0px 0px rgba(90, 136, 197, 1);
+    -moz-box-shadow: 0px 3px 0px -2px rgba(117, 180, 251, 1),
+    0px 2px 0px 0px rgba(90, 136, 197, 1);
+    box-shadow: 0px 3px 0px -2px rgba(117, 180, 251, 1),
+    0px 2px 0px 0px rgba(90, 136, 197, 1);
     cursor: pointer;
   }
 
