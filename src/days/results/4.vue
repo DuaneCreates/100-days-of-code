@@ -7,17 +7,20 @@
           <div class="field">
             <label
               for="card-number">Card Number</label>
-            <input
-              type="text" id="card-number"/>
+            <cleave v-model="number"
+                    :options="{creditCard: true, delimiter: '-', onCreditCardTypeChanged: updatedNumber}"
+                    type="text" id="card-number" name="card-number"/>
           </div>
           <div class="flex flex-row mt-8">
             <div class="w-full sm:w-2/3 sm:pr-10 field">
               <label for="card-expire">Expiration Date</label>
-              <input type="text" id="card-expire"/>
+              <cleave v-model="expiration"
+                      :options="{date:true, blocks:[2,2], delimiter:'/', datePattern: ['m','y']}"
+                      type="text" id="card-expire" name="card-expire"/>
             </div>
             <div class="w-full sm:w-1/3 sm:pl-10 field">
-              <label for="card-ccv">CCV</label>
-              <input type="text" id="card-ccv"/>
+              <label for="card-ccv">CCV / CVV</label>
+              <input v-model="cvv" type="text" maxlength="3" id="card-ccv"/>
             </div>
           </div>
         </form>
@@ -29,6 +32,30 @@
 <script>
 export default {
   name: 'result-4',
+  data() {
+    return {
+      number: null,
+      expiration: null,
+      cvv: null,
+      type: null,
+    };
+  },
+  methods: {
+    updatedNumber(type) {
+      this.type = type;
+    },
+  },
+  computed: {
+    numberValid() {
+      return this.type !== null && this.type !== 'unknown';
+    },
+    expirationValid() {
+      return this.expiration.length === 4;
+    },
+    ccvValid() {
+      return this.cvv.length === 3;
+    },
+  },
 };
 </script>
 
