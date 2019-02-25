@@ -21,6 +21,6 @@ export default {
   - Form validation, especially since it is a payment form.
   `,
   tags: ['ui', 'dailyui', 'uidesign', 'tailwindcss'],
-  github_url: 'https://github.com/DuaneCreates/100-days-of-code/tree/day/1',
+  github_url: 'https://github.com/DuaneCreates/100-days-of-code/tree/day/4',
   codepen_url: null,
 };
