@@ -33,7 +33,7 @@
       </div>
       <div v-if="expanded" class="body">
         <h1 class="body__title">{{title}}</h1>
-        <vue-markdown class="body__post" :source="post"></vue-markdown>
+        <vue-markdown class="markdown-body" :source="post"></vue-markdown>
         <div v-if="!hasResult && type !== 'log'" class="text-center mt-6">
         <span class="text-lg text-red">
           There's no result component for this day
@@ -215,10 +215,6 @@ export default {
 
         &__title {
           @apply px-5 text-3xl font-raleway text-center;
-        }
-
-        &__post {
-          @apply px-5 mt-6 font-montserrat max-w-lg mx-auto;
         }
 
         &__result {

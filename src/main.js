@@ -1,4 +1,5 @@
 import '@/assets/css/tailwind.css';
+import 'github-markdown-css/github-markdown.css';
 
 import Vue from 'vue';
 import Icon from 'vue-awesome/components/Icon.vue';
