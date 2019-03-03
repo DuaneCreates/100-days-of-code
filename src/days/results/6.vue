@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'result-6',
+  name: 'day-6',
   data() {
     return {
       active: null,
