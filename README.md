@@ -46,7 +46,7 @@ export default {
 ```
 
 ### Google Analytics
-To start tracking your website visitors, create an [environment file](https://cli.vuejs.org/guide/mode-and-env.html#environment-variables) with the key ```VUE_APP_GA``` and put in the Google Analytics Tracking ID.
+To start tracking website visitors, create an [environment file](https://cli.vuejs.org/guide/mode-and-env.html#environment-variables) with the key ```VUE_APP_GA``` and set the Google Analytics tracking ID
 
 ### Clone This Project
 ```
