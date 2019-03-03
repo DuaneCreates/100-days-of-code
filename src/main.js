@@ -4,6 +4,7 @@ import Vue from 'vue';
 import Icon from 'vue-awesome/components/Icon.vue';
 import VueMarkdown from 'vue-markdown';
 import Cleave from 'vue-cleave-component';
+import VueAnalytics from 'vue-analytics';
 import App from './App.vue';
 
 import 'vue-awesome/icons/brands/codepen';
@@ -31,6 +32,18 @@ results.keys().map(key => Vue.component(`result-${key.split('/').pop().split('.'
 Vue.component('v-icon', Icon);
 
 Vue.config.productionTip = false;
+
+const isProd = process.env.NODE_ENV === 'production';
+const trackingId = process.env.VUE_APP_GA;
+if (trackingId) {
+  Vue.use(VueAnalytics, {
+    id: trackingId,
+    debug: {
+      enabled: !isProd,
+      sendHitTask: isProd,
+    },
+  });
+}
 
 // FONTS
 require('typeface-raleway');

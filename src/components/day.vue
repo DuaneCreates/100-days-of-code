@@ -3,7 +3,7 @@
        :class="{'day--even':day%2===0,'day--odd':day%2===1,'day--no-result':!hasResult && type !== 'log'}">
     <section class="day">
       <div class="cover">
-        <div class="day__info" :class="{'cursor-pointer':!expanded}" @click="expanded=true">
+        <div class="day__info" :class="{'cursor-pointer':!expanded}" @click="expand">
           <h2 class="day__info__number">Day #{{day}}</h2>
           <h3 class="day__info__date">
             <span class="day">{{formattedDay+', '}}</span>
@@ -22,7 +22,7 @@
             <a v-if="expanded" class="external__item external__item--close" @click="expanded=false">
               <v-icon name="regular/minus-square" scale="1.5"/>
             </a>
-            <a v-else class="external__item external__item--expand" @click="expanded=true">
+            <a v-else class="external__item external__item--expand" @click="expand">
               <v-icon name="regular/plus-square" scale="1.5"/>
             </a>
           </div>
@@ -94,6 +94,12 @@ export default {
     return {
       expanded: false,
     };
+  },
+  methods: {
+    expand() {
+      this.expanded = true;
+      this.$ga.event('days', 'expanded', 'day', this.day);
+    },
   },
   computed: {
     formattedDate() {
