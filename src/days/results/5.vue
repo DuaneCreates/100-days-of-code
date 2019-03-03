@@ -15,7 +15,7 @@
 import moment from 'moment';
 
 export default {
-  name: 'result-5',
+  name: 'day-5',
   data() {
     return {
       date: moment(),
