@@ -1,6 +1,6 @@
 export default {
   day: 1,
-  type: 'result',
+  type: 'ui',
   date: '2019-02-20',
   title: 'Sign-up Page',
   post: `
@@ -25,5 +25,5 @@ export default {
   `,
   tags: ['ui', 'dailyui', 'uidesign', 'tailwindcss'],
   github_url: 'https://github.com/DuaneCreates/100-days-of-code/tree/day/1',
-  codepen_url: null,
+  codepen_url: 'https://codepen.io/duanecreates/pen/KEMKbw',
 };
