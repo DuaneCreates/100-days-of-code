@@ -4,6 +4,8 @@ export default {
   date: '2019-02-27',
   title: 'Flex Panels',
   post: `
+  #### JS 30 #005 Challenge  
+  
   > ♪ Click a panel and it will grow; From greyscale to color, they will go ♫  
 
   ### Topics touched:
@@ -17,5 +19,5 @@ export default {
   `,
   tags: ['js', 'js30', 'tailwindcss'],
   github_url: 'https://github.com/DuaneCreates/100-days-of-code/tree/day/6',
-  codepen_url: null,
+  codepen_url: 'https://codepen.io/duanecreates/pen/OqXbLX',
 };
