@@ -7,6 +7,7 @@ import VueMarkdown from 'vue-markdown';
 import Cleave from 'vue-cleave-component';
 import VueAnalytics from 'vue-analytics';
 import App from './App.vue';
+import router from './router';
 
 import 'vue-awesome/icons/brands/codepen';
 import 'vue-awesome/icons/brands/github';
@@ -52,5 +53,6 @@ require('typeface-roboto');
 require('typeface-montserrat');
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app');

@@ -44,7 +44,7 @@
           This day has no preview, just a log
         </span>
         </div>
-        <component v-if="hasComponent" class="body__result"
+        <component v-if="hasComponent && type === 'result'" class="body__result"
                    :is="`day-${day}`"/>
       </div>
     </section>
@@ -98,7 +98,8 @@ export default {
   methods: {
     expand() {
       this.expanded = true;
-      this.$ga.event('days', 'expanded', 'day', this.day);
+
+      if (process.env.VUE_APP_GA) this.$ga.event('days', 'expanded', 'day', this.day);
     },
   },
   computed: {
