@@ -1,6 +1,6 @@
 <template>
   <div class="day-wrapper"
-       :class="{'day--even':day%2===0,'day--odd':day%2===1,'day--no-result':!hasResult && type !== 'log'}">
+       :class="{'day--even':day%2===0,'day--odd':day%2===1,'day--no-result':!hasComponent && type !== 'log'}">
     <section class="day">
       <div class="cover">
         <div class="day__info" :class="{'cursor-pointer':!expanded}" @click="expand">
@@ -34,9 +34,9 @@
       <div v-if="expanded" class="body">
         <h1 class="body__title">{{title}}</h1>
         <vue-markdown class="markdown-body" :source="post"></vue-markdown>
-        <div v-if="!hasResult && type !== 'log'" class="text-center mt-6">
+        <div v-if="!hasComponent && type !== 'log'" class="text-center mt-6">
         <span class="text-lg text-red">
-          There's no result component for this day
+          There's no component for this day
         </span>
         </div>
         <div v-if="type === 'log'" class="text-center mt-6">
@@ -44,8 +44,8 @@
           This day has no preview, just a log
         </span>
         </div>
-        <component v-if="hasResult" class="body__result"
-                   :is="`result-${day}`"/>
+        <component v-if="hasComponent" class="body__result"
+                   :is="`day-${day}`"/>
       </div>
     </section>
   </div>
@@ -108,8 +108,8 @@ export default {
     formattedDay() {
       return moment(this.date).format('dddd');
     },
-    hasResult() {
-      return this.$options.components[`result-${this.day}`];
+    hasComponent() {
+      return this.$options.components[`day-${this.day}`];
     },
   },
 };
