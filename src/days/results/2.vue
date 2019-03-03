@@ -22,7 +22,7 @@
 import _ from 'lodash';
 
 export default {
-  name: 'result-2',
+  name: 'day-2',
   data() {
     return {
       keyed: null,
