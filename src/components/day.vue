@@ -13,11 +13,11 @@
 
         <div class="action">
           <div class="external">
-            <a v-if="github_url" :href="github_url" class="external__item">
-              <v-icon name="brands/github" scale="1.5"/>
-            </a>
             <a v-if="codepen_url" :href="codepen_url" class="external__item">
               <v-icon name="brands/codepen" scale="1.5"/>
+            </a>
+            <a v-if="github_url" :href="github_url" class="external__item">
+              <v-icon name="brands/github" scale="1.5"/>
             </a>
             <a v-if="expanded" class="external__item external__item--close" @click="expanded=false">
               <v-icon name="regular/minus-square" scale="1.5"/>
