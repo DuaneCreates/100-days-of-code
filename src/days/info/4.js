@@ -1,6 +1,6 @@
 export default {
   day: 4,
-  type: 'result',
+  type: 'ui',
   date: '2019-02-25',
   title: 'Credit Card Checkout',
   post: `
