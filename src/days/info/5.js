@@ -4,6 +4,8 @@ export default {
   date: '2019-02-26',
   title: 'Clock Face',
   post: `
+  #### JS 30 #002 Challenge  
+  
   > ♪ What's the time? Time for another CSS design! ♫  
 
   ### Topics touched:
@@ -18,5 +20,5 @@ export default {
   `,
   tags: ['js', 'js30', 'tailwindcss'],
   github_url: 'https://github.com/DuaneCreates/100-days-of-code/tree/day/5',
-  codepen_url: null,
+  codepen_url: 'https://codepen.io/duanecreates/pen/RdRGOw',
 };
