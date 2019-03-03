@@ -45,7 +45,7 @@
 
 <script>
 export default {
-  name: 'result-4',
+  name: 'day-4',
   data() {
     return {
       number: null,
