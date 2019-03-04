@@ -14,7 +14,7 @@
           <v-icon name="brands/codepen" scale="2.5"/>
         </a>
       </div>
-      <img class="avatar" src="https://placeimg.com/150/150/tech"/>
+      <img class="avatar" :src="require(`../assets/avatar.png`)"/>
     </section>
   </div>
 </template>
