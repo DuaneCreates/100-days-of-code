@@ -1,11 +1,13 @@
 import '@/assets/css/tailwind.css';
 import 'github-markdown-css/github-markdown.css';
+import 'vue-slider-component/theme/antd.css';
 
 import Vue from 'vue';
 import Icon from 'vue-awesome/components/Icon.vue';
 import VueMarkdown from 'vue-markdown';
 import Cleave from 'vue-cleave-component';
 import VueAnalytics from 'vue-analytics';
+import VueSlider from 'vue-slider-component';
 import App from './App.vue';
 import router from './router';
 
@@ -32,6 +34,7 @@ const results = require.context('@/days/results', true, /\.vue$/i);
 results.keys().map(key => Vue.component(`day-${key.split('/').pop().split('.')[0]}`, results(key).default));
 
 Vue.component('v-icon', Icon);
+Vue.component('vue-slider', VueSlider);
 
 Vue.config.productionTip = false;
 

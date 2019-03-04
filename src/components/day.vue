@@ -46,6 +46,7 @@
         </div>
         <component v-if="hasComponent && type === 'result'" class="body__result"
                    :is="`day-${day}`"/>
+        <devices v-if="hasComponent && type ==='ui'" :day="day" class="body__result"></devices>
       </div>
     </section>
   </div>
@@ -53,9 +54,11 @@
 
 <script>
 import moment from 'moment';
+import Devices from './devices';
 
 export default {
   name: 'day',
+  components: { Devices },
   props: {
     day: {
       type: Number,
