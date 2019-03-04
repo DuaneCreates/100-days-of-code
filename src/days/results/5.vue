@@ -1,6 +1,12 @@
 <template>
   <section>
-    <div class="clock">
+    <div class="block lg:hidden text-center mt-6">
+        <span class="text-lg text-grey">
+          This component is not mobile-responsive
+        </span>
+    </div>
+
+    <div class="hidden lg:block clock">
       <div class="clock-face">
         <div class="hand hour-hand" :style="{transform:'rotate('+hoursDegrees+'deg)'}"></div>
         <div class="hand min-hand" :style="{transform:'rotate('+minutesDegrees+'deg)'}"></div>
@@ -62,10 +68,9 @@ export default {
     .clock {
       @apply rounded-full p-8 relative mx-auto my-16 w-128 h-128 border-8 border-blue;
 
-      box-shadow:
-        0 0 60px 2px #fff,  /* inner white */
-        0 0 75px 4px #f0f, /* middle magenta */
-        0 0 140px 9px #0ff; /* outer cyan */
+      box-shadow: 0 0 60px 2px #fff, /* inner white */
+      0 0 75px 4px #f0f, /* middle magenta */
+      0 0 140px 9px #0ff; /* outer cyan */
 
       .clock-face {
         @apply relative w-full h-full;
