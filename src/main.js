@@ -1,6 +1,7 @@
 import '@/assets/css/tailwind.css';
 import 'github-markdown-css/github-markdown.css';
 import 'vue-slider-component/theme/antd.css';
+import 'animate.css';
 
 import Vue from 'vue';
 import Icon from 'vue-awesome/components/Icon.vue';
