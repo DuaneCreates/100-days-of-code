@@ -1,9 +1,12 @@
 <template>
   <section>
-    <div v-for="(k,i) in keys" :key="k.index" class="box animated"
-         :style="{zIndex: i, backgroundColor: k.color, top: k.scatter.top, left:k.scatter.left}"
-         :class="{'zoomInLeft faster': k.visible, 'zoomOutRight slower': !k.visible}">
-      <h1>{{k.key}}</h1>
+    <p>Start mashing your keyboard</p>
+    <div class="wrapper">
+      <div v-for="(k,i) in keys" :key="k.index" class="box animated"
+           :style="{zIndex: i, backgroundColor: k.color, top: k.scatter.top, left:k.scatter.left}"
+           :class="{'zoomInLeft faster': k.visible, 'zoomOutRight slower': !k.visible}">
+        <h1>{{k.key}}</h1>
+      </div>
     </div>
   </section>
 </template>
@@ -59,10 +62,16 @@ export default {
 
 <style lang="scss" scoped>
   section {
-    @apply bg-white overflow-hidden h-screen w-screen max-h-screen;
+    p {
+      @apply text-center p-4 text-4xl text-purple-dark font-raleway;
+    }
+    
+    .wrapper {
+      @apply bg-white overflow-hidden h-screen w-screen max-h-screen m-auto relative;
 
-    .box {
-      @apply shadow-lg h-64 w-64 max-h-full max-w-full m-2 p-4 text-5xl text-indigo-lightest font-raleway absolute flex justify-center items-center;
+      .box {
+        @apply shadow-lg h-64 w-64 max-h-full max-w-full m-2 p-4 text-5xl text-indigo-lightest font-raleway flex justify-center items-center absolute;
+      }
     }
   }
 </style>
