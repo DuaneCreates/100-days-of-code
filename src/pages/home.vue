@@ -24,8 +24,9 @@ export default {
 
   mounted() {
     // load each day's info from @/days/info into this.days
-    const files = require.context('../days/info', true, /\.js$/i);
-    this.days = files.keys().map(key => require(`@/days/info/${key.split('/').pop().split('.')[0]}.js`).default);
+    const files = require.context('../days/info', true, /\.js$/i).keys().map(key => key.split('/').pop().split('.')[0]);
+
+    this.days = files.sort((a, b) => a - b).map(f => require(`@/days/info/${f}.js`).default);
   },
 };
 </script>
