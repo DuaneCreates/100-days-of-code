@@ -1,6 +1,7 @@
 export default {
   day: 10,
   type: 'result',
+  desktop_only: true,
   date: '2019-03-07',
   title: 'Picasso, is that you?',
   post: `

@@ -35,6 +35,7 @@ export default {
 ##### Description of each field
 - day: the numeric day in the timeline
 - type: determines the way the day is presented, more details below
+- desktop_only: determines whether the component will be shown on mobile devices or not (some components might not support touch)
 - date: the date of the day
 - title: self explanatory I would say
 - post: the description of the day in markdown format 

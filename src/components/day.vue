@@ -44,17 +44,23 @@
           This day has no preview, just a log
         </span>
         </div>
-        <component v-if="hasComponent && type === 'result'" class="body__result"
+        <div v-if="isMobileOnDesktopOnly" class="text-center mt-6">
+          <span class="text-lg text-red">
+          This day is only usable on desktop
+        </span>
+        </div>
+        <component v-else-if="hasComponent && type === 'result'" class="body__result"
                    :is="`day-${day}`"/>
-        <devices v-if="hasComponent && type ==='ui'" :day="day" class="body__result"></devices>
+        <devices v-else-if="hasComponent && type ==='ui'" :day="day" class="body__result"></devices>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import { isMobile } from 'mobile-device-detect';
 import moment from 'moment';
-import Devices from './devices';
+import Devices from './devices.vue';
 
 export default {
   name: 'day',
@@ -67,6 +73,10 @@ export default {
     type: {
       type: String,
       default: 'result',
+    },
+    desktop_only: {
+      type: Boolean,
+      default: false,
     },
     date: {
       type: String,
@@ -114,6 +124,9 @@ export default {
     },
     hasComponent() {
       return this.$options.components[`day-${this.day}`];
+    },
+    isMobileOnDesktopOnly() {
+      return isMobile && this.desktop_only;
     },
   },
 };

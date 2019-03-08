@@ -1,6 +1,7 @@
 export default {
   day: 9,
   type: 'result',
+  desktop_only: true,
   date: '2019-03-05',
   title: '',
   post: `
