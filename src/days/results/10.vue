@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="10-parent">
     <p>Draw Something</p>
     <canvas ref="canvas"></canvas>
   </section>
@@ -37,6 +37,17 @@ export default {
     setIsNotDrawing(e) {
       this.isDrawing = false;
     },
+    setup() {
+      const { canvas } = this.$refs;
+      canvas.width = document.getElementById('10-parent').offsetWidth;
+      canvas.height = window.innerHeight;
+
+      this.ctx = canvas.getContext('2d');
+      this.ctx.strokeStyle = '#BADA55';
+      this.ctx.lineJoin = 'round';
+      this.ctx.lineCap = 'round';
+      this.ctx.lineWidth = 10;
+    },
   },
 
   created() {
@@ -44,23 +55,18 @@ export default {
     window.addEventListener('mousedown', this.setIsDrawing);
     window.addEventListener('mouseup', this.setIsNotDrawing);
     window.addEventListener('mouseout', this.setIsNotDrawing);
+    window.addEventListener('resize', this.setup);
   },
   beforeDestroy() {
     window.removeEventListener('mousemove', this.draw);
     window.removeEventListener('mousedown', this.setIsDrawing);
     window.removeEventListener('mouseup', this.setIsNotDrawing);
     window.removeEventListener('mouseout', this.setIsNotDrawing);
+    window.removeEventListener('resize', this.setup);
   },
 
   mounted() {
-    const { canvas } = this.$refs;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    this.ctx = canvas.getContext('2d');
-    this.ctx.strokeStyle = '#BADA55';
-    this.ctx.lineJoin = 'round';
-    this.ctx.lineCap = 'round';
-    this.ctx.lineWidth = 10;
+    this.setup();
   },
 };
 
