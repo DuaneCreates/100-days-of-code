@@ -50,6 +50,8 @@ let colors = {
   '1-light-1':'#984673',
   '1-light-3':'#F8F7F4',
 
+  '12-brown':'#c19a6b',
+
   'transparent': 'transparent',
 
   'black': '#22292f',
