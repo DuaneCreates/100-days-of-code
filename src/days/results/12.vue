@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-row justify-center flex-wrap text-center">
+  <section class="flex flex-row justify-center flex-wrap text-center pb-12">
     <div class="w-full sm:w-1/2 md:w-1/4 p-8">
       <loader-1></loader-1>
     </div>
