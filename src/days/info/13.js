@@ -1,7 +1,7 @@
 export default {
   day: 13,
   type: 'log',
-  date: '2019-03-13',
+  date: '2019-03-12',
   title: 'Pug.js',
   post: `
    I've been seeing pug.js (formerly known as Jade) a lot, but I never tried it because I'm used to normal HTML.  
