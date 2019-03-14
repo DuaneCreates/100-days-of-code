@@ -15,6 +15,7 @@ import router from './router';
 import 'vue-awesome/icons/brands/codepen';
 import 'vue-awesome/icons/brands/github';
 import 'vue-awesome/icons/brands/instagram';
+import 'vue-awesome/icons/brands/twitter';
 import 'vue-awesome/icons/regular/plus-square';
 import 'vue-awesome/icons/regular/minus-square';
 import 'vue-awesome/icons/check';

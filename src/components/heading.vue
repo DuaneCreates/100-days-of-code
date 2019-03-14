@@ -7,6 +7,9 @@
         <a v-if="info.instagram_url" :href="info.instagram_url" class="external__item">
           <v-icon name="brands/instagram" scale="2.5"/>
         </a>
+        <a v-if="info.twitter_url" :href="info.twitter_url" class="external__item">
+          <v-icon name="brands/twitter" scale="2.5"/>
+        </a>
         <a v-if="info.github_url" :href="info.github_url" class="external__item">
           <v-icon name="brands/github" scale="2.5"/>
         </a>
