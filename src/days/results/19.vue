@@ -43,7 +43,7 @@ export default {
           this.message = 'Encountered an error';
           this.loading_models = false;
         });
-    }, 350, { leading: true, trailing: true }),
+    }, 350, { trailing: true }),
   },
 };
 </script>
