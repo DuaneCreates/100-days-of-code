@@ -29,7 +29,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~plugins/vue-awesome.js'],
 
   /*
    ** Nuxt.js modules
@@ -49,6 +49,7 @@ export default {
    ** Build configuration
    */
   build: {
+    transpile: [/^vue-awesome/],
     postcss: [require('tailwindcss')('./tailwind.js'), require('autoprefixer')],
 
     /*
