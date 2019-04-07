@@ -46,6 +46,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
+    '~plugins/fonts.js',
     '~plugins/vue-awesome.js',
     '~plugins/vue-cleave.js',
     '~plugins/vue-markdown.js',
@@ -72,7 +73,6 @@ export default {
    ** Build configuration
    */
   build: {
-    analyze: true,
     transpile: [/^vue-awesome/],
     extractCSS: true,
     postcss: {
