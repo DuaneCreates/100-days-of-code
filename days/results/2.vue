@@ -27,7 +27,7 @@
       v-for="a in audio"
       :key="a.file"
       :ref="a.file"
-      :src="`~/assets/days/2/${a.file}.wav`"
+      :src="`/days/2/${a.file}.wav`"
     ></audio>
   </section>
 </template>
