@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*
 
 Tailwind - The Utility-First CSS Framework
