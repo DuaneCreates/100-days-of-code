@@ -24,12 +24,23 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/tailwind.css', 'animate.css'],
+
+  css: [
+    '@/assets/css/tailwind.css',
+    'animate.css',
+    'github-markdown-css/github-markdown.css',
+    'vue-slider-component/theme/antd.css'
+  ],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/vue-awesome.js'],
+  plugins: [
+    '~plugins/vue-awesome.js',
+    '~plugins/vue-cleave.js',
+    '~plugins/vue-markdown.js',
+    '~plugins/vue-slider.js',
+  ],
 
   /*
    ** Nuxt.js modules
