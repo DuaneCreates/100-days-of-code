@@ -41,6 +41,7 @@ export default {
     '~plugins/vue-cleave.js',
     '~plugins/vue-markdown.js',
     '~plugins/vue-slider.js',
+    '~plugins/vue-analytics.js',
     '~plugins/day-components.js'
   ],
 
