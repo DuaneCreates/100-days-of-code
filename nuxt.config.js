@@ -117,5 +117,13 @@ export default {
         )
       }
     }
+  },
+
+  generate: {
+    routes: () =>
+      glob
+        .sync(['./days/info/**.js'])
+        .filter(f => ['ui', 'result'].includes(require(f).default.type))
+        .map(f => `/${require(f).default.day}`)
   }
 }
