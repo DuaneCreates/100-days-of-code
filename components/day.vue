@@ -49,8 +49,7 @@
           </div>
         </div>
       </div>
-      <!--TODO make vshow for ssr?-->
-      <div v-if="expanded" class="body">
+      <div v-if="expanded || isServer" class="body">
         <h1 class="body__title">{{ title }}</h1>
         <vue-markdown class="markdown-body" :source="post"></vue-markdown>
         <div v-if="!hasComponent && type !== 'log'" class="text-center mt-6">
@@ -63,21 +62,23 @@
             This day has no preview, just a log
           </span>
         </div>
-        <div v-if="isMobileOnDesktopOnly" class="text-center mt-6">
-          <span class="text-lg text-red">
-            This day is only usable on desktop
-          </span>
-        </div>
-        <component
-          :is="`day-${day}`"
-          v-else-if="hasComponent && type === 'result'"
-          class="body__result"
-        />
-        <devices
-          v-else-if="hasComponent && type === 'ui'"
-          :day="day"
-          class="body__result"
-        ></devices>
+        <no-ssr>
+          <div v-if="isMobileOnDesktopOnly" class="text-center mt-6">
+            <span class="text-lg text-red">
+              This day is only usable on desktop
+            </span>
+          </div>
+          <component
+            :is="`day-${day}`"
+            v-else-if="hasComponent && type === 'result'"
+            class="body__result"
+          />
+          <devices
+            v-else-if="hasComponent && type === 'ui'"
+            :day="day"
+            class="body__result"
+          ></devices>
+        </no-ssr>
       </div>
     </section>
   </div>
@@ -135,7 +136,8 @@ export default {
   },
   data() {
     return {
-      expanded: false
+      expanded: false,
+      isServer: process.server
     }
   },
   computed: {

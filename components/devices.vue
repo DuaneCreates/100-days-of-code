@@ -7,28 +7,26 @@
       </div>
     </div>
 
-    <no-ssr>
-      <div id="controls" class="flex flex-row">
-        <div class="flex-1">
-          <vue-slider
-            v-model.number="width"
-            :min="300"
-            :max="1920"
-            tooltip="always"
-            :tooltip-formatter="'Width {value}px'"
-          />
-        </div>
-        <div class="flex-1">
-          <vue-slider
-            v-model.number="height"
-            :min="300"
-            :max="1080"
-            tooltip="always"
-            :tooltip-formatter="'Height {value}px'"
-          />
-        </div>
+    <div id="controls" class="flex flex-row">
+      <div class="flex-1">
+        <vue-slider
+          v-model.number="width"
+          :min="300"
+          :max="1920"
+          tooltip="always"
+          :tooltip-formatter="'Width {value}px'"
+        />
       </div>
-    </no-ssr>
+      <div class="flex-1">
+        <vue-slider
+          v-model.number="height"
+          :min="300"
+          :max="1080"
+          tooltip="always"
+          :tooltip-formatter="'Height {value}px'"
+        />
+      </div>
+    </div>
   </section>
 </template>
 

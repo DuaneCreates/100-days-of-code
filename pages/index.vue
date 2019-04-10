@@ -38,8 +38,7 @@ export default {
 
   created() {
     if (process.client) AOS.init()
-  },
-  mounted() {
+
     // load each day's info from @/days/info into this.days
     const files = require
       .context('../days/info', true, /\.js$/i)
