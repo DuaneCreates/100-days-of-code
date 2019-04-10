@@ -13,8 +13,8 @@
       :type="day.type"
       :codepen-url="day.codepen_url"
       :desktop-only="day.desktop_only"
-      :data-aos="day.day !== 1 ? 'slide-down' : ''"
-      data-aos-duration="100"
+      :data-aos="day.day !== 1 ? 'zoom-in' : ''"
+      data-aos-duration="150"
       data-aos-easing="ease-in-out"
     ></day>
   </section>
