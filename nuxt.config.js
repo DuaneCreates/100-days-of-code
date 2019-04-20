@@ -66,7 +66,7 @@ export default {
     '~plugins/vue-awesome.js',
     '~plugins/vue-cleave.js',
     '~plugins/vue-markdown.js',
-    '~plugins/vue-slider.js',
+    { src: '~plugins/vue-slider.js', ssr: false },
     '~plugins/vue-analytics.js',
     '~plugins/day-components.js'
   ],
@@ -130,7 +130,8 @@ export default {
                 extensions: ['vue']
               }
             ],
-            whitelist: ['html', 'body', 'nuxt-progress']
+            whitelist: ['html', 'body', 'nuxt-progress'],
+            whitelistPatternsChildren: [/^vue-slider/]
           })
         )
       }
