@@ -49,7 +49,7 @@
           </div>
         </div>
       </div>
-      <div v-if="expanded || isServer" class="body">
+      <div v-if="expanded" class="body">
         <h1 class="body__title">{{ title }}</h1>
         <vue-markdown class="markdown-body" :source="post"></vue-markdown>
         <div v-if="!hasComponent && type !== 'log'" class="text-center mt-6">
@@ -136,8 +136,7 @@ export default {
   },
   data() {
     return {
-      expanded: false,
-      isServer: process.server
+      expanded: false
     }
   },
   computed: {

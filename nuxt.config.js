@@ -1,13 +1,25 @@
 import path from 'path'
 import PurgecssPlugin from 'purgecss-webpack-plugin'
 import glob from 'glob-all'
-import pkg from './package'
 
 class TailwindExtractor {
   static extract(content) {
     return content.match(/[A-z0-9-:/]+/g) || []
   }
 }
+
+const sitemapRoutes = () =>
+  glob
+    .sync(['./days/info/**.js'])
+    .filter(f => ['ui', 'result'].includes(require(f).default.type))
+    .map(f => ({
+      url: `/${require(f).default.day}`,
+      changefreq: 'weekly',
+      priority: 0.9,
+      lastmodISO: `${require(f).default.date}`
+    }))
+
+const generatedSitemapRoutes = sitemapRoutes()
 
 export default {
   mode: 'universal',
@@ -16,11 +28,16 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: '100 Days of Code | Duane Creates',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'My 100 days of code consists of the Daily UI Challenge and JS 30, amongst others. Main technologies used are Javascript with Vue js and styling via Tailwind css.'
+      }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
@@ -60,7 +77,8 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/sitemap'
   ],
   /*
    ** Axios module configuration
@@ -125,5 +143,25 @@ export default {
         .sync(['./days/info/**.js'])
         .filter(f => ['ui', 'result'].includes(require(f).default.type))
         .map(f => `/${require(f).default.day}`)
+  },
+
+  sitemap: {
+    hostname: require('./info').default.hostname,
+    gzip: true,
+    exclude: [],
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date(),
+      lastmodrealtime: true
+    },
+    routes: [
+      {
+        url: '/',
+        changefreq: 'daily',
+        priority: 1
+      },
+      ...generatedSitemapRoutes
+    ]
   }
 }
