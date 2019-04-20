@@ -58,7 +58,7 @@ export default {
         'pink'
       ]
 
-      const tailwind = require('../../../100-days-of-code/tailwind.js')
+      const tailwind = require('@/tailwind.js')
 
       return tailwind.colors[`${_.sample(c)}-dark`]
     },
