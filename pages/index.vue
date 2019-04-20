@@ -13,15 +13,11 @@
       :type="day.type"
       :codepen-url="day.codepen_url"
       :desktop-only="day.desktop_only"
-      :data-aos="day.day !== 1 ? 'zoom-in' : ''"
-      data-aos-duration="150"
-      data-aos-easing="ease-in-out"
     ></day>
   </section>
 </template>
 
 <script>
-import AOS from 'aos'
 import Heading from '@/components/heading.vue'
 import Day from '@/components/day.vue'
 
@@ -37,8 +33,6 @@ export default {
   },
 
   created() {
-    if (process.client) AOS.init()
-
     // load each day's info from @/days/info into this.days
     const files = require
       .context('../days/info', true, /\.js$/i)

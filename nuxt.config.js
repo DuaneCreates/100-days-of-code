@@ -54,7 +54,6 @@ export default {
   css: [
     '@/assets/css/tailwind.css',
     'animate.css',
-    'aos/dist/aos.css',
     'github-markdown-css/github-markdown.css',
     'vue-slider-component/theme/antd.css'
   ],
