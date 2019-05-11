@@ -1,6 +1,7 @@
 import path from 'path'
 import PurgecssPlugin from 'purgecss-webpack-plugin'
 import glob from 'glob-all'
+import info from './info.js'
 
 class TailwindExtractor {
   static extract(content) {
@@ -20,6 +21,7 @@ const sitemapRoutes = () =>
     }))
 
 const generatedSitemapRoutes = sitemapRoutes()
+const trackingId = info.ga_code
 
 export default {
   mode: 'universal',
@@ -67,7 +69,6 @@ export default {
     '~plugins/vue-cleave.js',
     '~plugins/vue-markdown.js',
     { src: '~plugins/vue-slider.js', ssr: false },
-    '~plugins/vue-analytics.js',
     '~plugins/day-components.js'
   ],
 
@@ -77,7 +78,14 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: trackingId,
+        dev: true
+      }
+    ]
   ],
   /*
    ** Axios module configuration
