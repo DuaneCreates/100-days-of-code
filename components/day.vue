@@ -143,10 +143,10 @@ export default {
   },
   computed: {
     formattedDate() {
-      return moment(this.date).format('Do MMMM YYYY')
+      return moment(this.date, 'YYYY-MM-DD').format('Do MMMM YYYY')
     },
     formattedDay() {
-      return moment(this.date).format('dddd')
+      return moment(this.date, 'YYYY-MM-DD').format('dddd')
     },
     hasComponent() {
       return this.$options.components[`day-${this.day}`]
