@@ -8,7 +8,7 @@ export default {
     
   ![Kapow!](/days/26/kapow.jpg "Balls colliding with high speed")
   `,
-  tags: ['unity', 'unity3d', 'C#', 'gamedev'],
+  tags: ['unity', 'unity3d', 'CSharp', 'gamedev'],
   github_url: null,
   codepen_url: null
 }

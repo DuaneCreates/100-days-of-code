@@ -8,7 +8,7 @@ export default {
   For example, when the speed is high (because you hold the direction key for a second) the character will use the running animation, but for slow speeds it will just walk.  
   Also, when you have low health, the character will use a wounded animation. Animation states can also be hybrid, so you blend between a wounded and walking animation, this is the power of Unity's animation system.
   `,
-  tags: ['unity', 'unity3d', 'C#', 'gamedev'],
+  tags: ['unity', 'unity3d', 'CSharp', 'gamedev'],
   github_url: null,
   codepen_url: null
 }
